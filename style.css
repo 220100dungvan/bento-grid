@@ -1,0 +1,460 @@
+@font-face {
+    font-family: DM-Sans;
+    src: url(./assets/fonts/DMSans-VariableFont_opsz\,wght.ttf);
+}
+
+:root {
+    --Purple-100: hsl(254, 88%, 90%);
+    --Purple-500: hsl(256, 67%, 59%);
+    --Yellow-100: hsl(31, 66%, 93%);
+    --Yellow-500: hsl(39, 100%, 71%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 7%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: "DM-Sans", sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    background-color: #f5f5f5;
+}
+
+main {
+    width: 74vw;
+}
+
+img {
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 75px;
+    gap: 20px;
+    grid-template-areas:
+        "seventh first first fourth"
+        "seventh first first fourth"
+        "seventh first first fourth"
+        "seventh second third fourth"
+        "eighth second third fourth"
+        "eighth second third fourth"
+        "eighth fifth sixth sixth"
+        "eighth fifth sixth sixth";
+    padding: 30px 0;
+}
+
+
+
+.card {
+    border-radius: 10px;
+}
+
+/* start card__rating */
+.card__rating {
+    grid-area: first;
+    color: var(--White);
+    padding: 61px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Purple-500);
+    text-align: center;
+}
+
+.card__rating--title {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 0.9;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.card__rating--title span {
+    color: var(--Yellow-500);
+}
+
+.card__rating--image img {
+    width: 50%;
+}
+
+.card__rating--review {
+    margin-top: 4px;
+}
+
+/* end card__rating */
+
+/* start card__social */
+.card__social {
+    grid-area: second;
+    background-color: var(--White);
+    padding: 16px;
+    overflow: hidden;
+}
+
+.card__social--title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+.card__social--image img {
+    width: 140%;
+    filter: drop-shadow(-6px 10px 5px rgba(0, 0, 0, 0.06));
+}
+
+/* end card__social */
+
+/* start .card__consistent */
+.card__consistent {
+    grid-area: third;
+    background-color: var(--Yellow-500);
+    padding: 16px;
+    overflow: hidden;
+}
+
+.card__consistent--title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 16px;
+
+}
+
+/* end .card__consistent */
+
+/* start .card__schedule */
+.card__schedule {
+    grid-area: fourth;
+    background-color: var(--Purple-100);
+    padding: 16px;
+    overflow: hidden;
+}
+
+.card__schedule--title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.card__schedule--image {
+    width: 170%;
+}
+
+.card__schedule--description {
+    margin-top: 16px;
+    line-height: 1;
+}
+
+/* end .card__schedule */
+
+
+/* start .card__growth */
+.card__growth {
+    grid-area: fifth;
+    background-color: var(--White);
+    padding: 16px;
+}
+
+.card__growth--title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card__growth--subtitle {
+    margin-bottom: 10px;
+}
+
+.card__growth--image {
+    width: 80%;
+}
+
+/* end .card__growth */
+
+/* start .card__followers */
+.card__followers {
+    grid-area: sixth;
+    background-color: var(--Purple-500);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: left;
+}
+
+.card__followers--image {
+    width: 60%;
+}
+
+.card__followers--title {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--White);
+    line-height: 0.9;
+}
+
+/* end .card__followers */
+
+/* start.card__create */
+.card__create {
+    grid-area: seventh;
+    background-color: var(--Yellow-100);
+    padding: 16px;
+}
+
+.card__create--title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    margin-top: 34px;
+    line-height: 1;
+}
+
+.card__create--title em {
+    color: var(--Purple-500);
+}
+
+/* end .card__create */
+
+/* start.card__ai */
+.card__ai {
+    grid-area: eighth;
+    background-color: var(--Yellow-500);
+    padding: 16px;
+    overflow: hidden;
+}
+
+.card__ai--title {
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 0.8;
+    margin-bottom: 18px;
+}
+
+/* end .card__ai */
+
+/* =====Responsive===== */
+@media (max-width:1200px) {
+    main {
+        width: 100%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+        gap: 16px;
+        grid-template-areas:
+            "first seventh"
+            "first second"
+            "sixth third"
+            "sixth fifth"
+            "eighth fourth"
+            "eighth fourth";
+        padding: 20px 0;
+    }
+
+    /* start card__rating */
+    .card__rating {
+        padding: 50px 40px;
+    }
+
+    .card__rating--title {
+        font-size: 40px;
+    }
+
+    .card__rating--image img {
+        width: 60%;
+    }
+
+    /* end card__rating */
+
+    /* start card__social */
+    .card__social {
+        grid-area: second;
+        background-color: var(--White);
+        padding: 16px;
+        overflow: hidden;
+    }
+
+    .card__social--title {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1;
+        margin-top: 8px;
+    }
+
+    .card__social--image img {
+        width: 90%;
+    }
+
+    /* end card__social */
+
+    /* start .card__consistent */
+    .card__consistent {
+        grid-area: third;
+        background-color: var(--Yellow-500);
+        padding: 16px;
+        overflow: hidden;
+        display: flex;
+        gap: 7px;
+        align-items: center;
+    }
+
+    .card__consistent--title {
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 10px;
+
+    }
+
+    .card__consistent--image {
+        margin-top: 40px;
+        width: 90%;
+    }
+
+    /* end .card__consistent */
+
+    /* start .card__schedule */
+    .card__schedule {
+        grid-area: fourth;
+        background-color: var(--Purple-100);
+        padding: 16px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card__schedule--title {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 16px;
+    }
+
+    .card__schedule--image {
+        width: 70%;
+    }
+
+    .card__schedule--description {
+        position: absolute;
+        top: 40px;
+        right: 5px;
+        text-align: left;
+        width: 24%;
+        line-height: 1.5;
+    }
+
+    /* end .card__schedule */
+
+
+    /* start .card__growth */
+    .card__growth {
+        grid-area: fifth;
+        background-color: var(--White);
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card__growth--title {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .card__growth--image {
+        width: 50%;
+    }
+
+    /* end .card__growth */
+
+    /* start .card__followers */
+    .card__followers--image {
+        width: 140%;
+    }
+
+    .card__followers--title {
+        font-size: 32px;
+        font-weight: 600;
+        color: var(--White);
+        line-height: 1.5;
+    }
+
+    /* end .card__followers */
+
+    /* start.card__create */
+    .card__create {
+        grid-area: seventh;
+        background-color: var(--Yellow-100);
+        padding: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .card__create--title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 22px;
+        margin-top: 0;
+        line-height: 1;
+    }
+
+    .card__create--image {
+        width: 60%;
+    }
+
+    /* end .card__create */
+
+    /* start.card__ai */
+    .card__ai--title {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 0.8;
+        margin-bottom: 18px;
+    }
+
+    .card__ai--image {
+        width: 90%;
+    }
+
+    /* end .card__ai */
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 100%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 16px;
+        grid-template-areas:
+            "first"
+            "second"
+            "third"
+            "fourth"
+            "fifth"
+            "sixth"
+            "seventh"
+            "eighth";
+        padding: 20px 0;
+    }
+}
